@@ -19,7 +19,6 @@ provider "azurerm" {
   tenant_id = var.tenant_id
 }
 
-
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "Southeast Asia"
