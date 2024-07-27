@@ -1,0 +1,19 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .terraform subdirectory files
+!.terraform/environment
+!.terraform/terraform.tfstate
+!.terraform/terraform.tfstate.backup
+
+# Terraform CLI configuration files
+.terraformrc
+terraform.rc
+
+# Crash log files
+crash.log
+
+# Ignore plan files
+*.tfplan
+*.tfplan.*
+
