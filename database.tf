@@ -6,4 +6,6 @@ resource "azurerm_mssql_server" "mysql" {
   administrator_login          = "missadministrator"
   administrator_login_password = "thisIsKat11"
   minimum_tls_version          = "1.2"
+
+  depends_on = [ azurerm_resource_group.web-api ]
 }
