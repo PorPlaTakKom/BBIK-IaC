@@ -19,10 +19,10 @@ provider "azurerm" {
   tenant_id = var.tenant_id
 }
 
-resource "azurerm_app_service_plan" "example" {
+resource "azurerm_app_service_plan" "webapp" {
   name                = "bbik-app-service-plan"
   location            = "Southeast Asia"
-  resource_group_name = "example-resources"
+  resource_group_name = "rg-webapp-sea"
   kind                = "Linux"
   reserved            = true
   
@@ -32,11 +32,11 @@ resource "azurerm_app_service_plan" "example" {
   }
 }
 
-resource "azurerm_app_service" "example" {
+resource "azurerm_app_service" "webapp" {
   name                = "bbik-web-app"
   location            = "Southeast Asia"
-  resource_group_name = "example-resources"
-  app_service_plan_id = azurerm_app_service_plan.example.id
+  resource_group_name = "rg-webapp-sea"
+  app_service_plan_id = azurerm_app_service_plan.webapp.id
 
   site_config {
     linux_fx_version = "DOCKER|${var.acr_url}/bbikapp:latest"
