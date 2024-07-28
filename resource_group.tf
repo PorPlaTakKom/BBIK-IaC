@@ -12,3 +12,8 @@ resource "azurerm_resource_group" "container" {
   name     = "rg-container-sea"
   location = "Southeast Asia"
 }
+
+resource "azurerm_resource_group" "network" {
+  name     = "rg-network-sea"
+  location = "Southeast Asia"
+}

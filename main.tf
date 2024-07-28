@@ -18,3 +18,15 @@ provider "azurerm" {
   client_secret = var.client_secret
   tenant_id = var.tenant_id
 }
+
+provider "tls" {}
+
+resource "tls_private_key" "vm_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+output "private_key" {
+  value = tls_private_key.vm_key.private_key_pem
+  sensitive = true 
+}
