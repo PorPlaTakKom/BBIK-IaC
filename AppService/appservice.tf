@@ -6,21 +6,21 @@ resource "azurerm_app_service_plan" "webapp" {
   reserved            = true
   
   sku {
-    tier = "Standard"
-    size = "S1"
+    tier = "Basic"
+    size = "B1"
   }
 }
 
 resource "azurerm_app_service_plan" "webapi" {
-  name                = "bbik-app-service-plan"
+  name                = "bbik-api-service-plan"
   location            = "Southeast Asia"
   resource_group_name = "rg-webapi-sea"
   kind                = "Linux"
   reserved            = true
   
   sku {
-    tier = "Standard"
-    size = "S1"
+    tier = "Basic"
+    size = "B1"
   }
 }
 
@@ -42,7 +42,7 @@ resource "azurerm_app_service" "webapp" {
 }
 
 resource "azurerm_app_service" "webapi" {
-  name                = "bbik-web-app"
+  name                = "bbik-web-api"
   location            = "Southeast Asia"
   resource_group_name = "rg-webapi-sea"
   app_service_plan_id = azurerm_app_service_plan.webapi.id
