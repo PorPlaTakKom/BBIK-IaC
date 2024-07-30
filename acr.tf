@@ -4,4 +4,4 @@ resource "azurerm_container_registry" "acr" {
   location            = azurerm_resource_group.container.location
   sku                 = "Basic"
   admin_enabled       = true
-}
+} 
